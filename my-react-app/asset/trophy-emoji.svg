@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="512" height="512" aria-labelledby="title">
+  <title id="title">Gold trophy</title>
+  <defs>
+    <linearGradient id="goldA" x1="0" x2="1">
+      <stop offset="0%" stop-color="#FFD966"/>
+      <stop offset="50%" stop-color="#FFB703"/>
+      <stop offset="100%" stop-color="#FF9F1C"/>
+    </linearGradient>
+    <linearGradient id="goldB" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#FFF7E0" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#FFE07A" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#E89A00" stop-opacity="0.95"/>
+    </linearGradient>
+    <radialGradient id="spec" cx="30%" cy="18%" r="60%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <g class="trophy-root" fill="none" fill-rule="evenodd">
+    <!-- Cup body -->
+    <path d="M30 30c0 15 10 24 30 24s30-9 30-24V20H30v10z" fill="url(#goldA)" stroke="#B36C00" stroke-width="1"/>
+    <!-- Inner shadow -->
+    <path d="M36 32c0 11 7.5 18 24 18s24-7 24-18" fill-opacity="0.08" fill="#2D1B00"/>
+    <!-- Specular highlight -->
+    <path d="M36 22c8 6 28 6 48 0" stroke="url(#spec)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+
+    <!-- Left handle -->
+    <path d="M26 26c-6 0-8 8-8 12s3 12 8 12" fill="none" stroke="url(#goldB)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Right handle -->
+    <path d="M94 26c6 0 8 8 8 12s-3 12-8 12" fill="none" stroke="url(#goldB)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Stem and base -->
+    <rect x="48" y="56" width="24" height="18" rx="3" fill="url(#goldB)" stroke="#C98600" stroke-width="0.8"/>
+    <rect x="38" y="74" width="44" height="8" rx="2" fill="#C98600"/>
+    <rect x="34" y="82" width="52" height="8" rx="3" fill="#8C5A00"/>
+
+    <!-- Engraved plaque (larger for text) -->
+    <g class="trophy-plaque-group" transform="translate(0,0)">
+      <rect class="trophy-plaque" x="46" y="64" width="28" height="8" rx="1.5" fill="#FFEF9E"/>
+      <text class="trophy-engraving" x="60" y="70" font-family="Bebas Neue, Arial, sans-serif" font-size="4" text-anchor="middle" fill="#8C5A00">CHAMPIONS</text>
+    </g>
+
+    <!-- Decorative stars -->
+    <g class="trophy-stars" fill="#FFF7D4" opacity="0.95">
+      <polygon points="60,12 61.8,16.5 66.5,16.9 62.9,19.8 64,24 60,21.6 56,24 57.1,19.8 53.5,16.9 58.2,16.5" />
+      <polygon points="36,18 37.2,20.8 39.9,21 38,22.9 38.5,25 36,23.4 33.5,25 34,22.9 32.1,21 34.8,20.8" />
+      <polygon points="84,18 85.2,20.8 87.9,21 86,22.9 86.5,25 84,23.4 81.5,25 82,22.9 80.1,21 82.8,20.8" />
+    </g>
+
+    <!-- Shine overlay (animated when inlined) -->
+    <path class="trophy-shine" d="M38 28c6 6 28 6 44 0" fill="url(#spec)" opacity="0.45"/>
+
+    <!-- subtle glow -->
+    <g transform="translate(0,0)" filter="url(#glow)">
+      <ellipse class="trophy-glow" cx="60" cy="98" rx="26" ry="6" fill="rgba(255,160,20,0.12)"/>
+    </g>
+  </g>
+</svg>
